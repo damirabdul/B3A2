@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="pizza" class="foo.bar.Food">
+        <constructor-arg name="name" value="Pizza"/>
+        <constructor-arg name="recept" value="testo+kolbasa"/>
+    </bean>
+
+    <bean id="soup" class="foo.bar.Food">
+        <constructor-arg name="name" value="Soup"/>
+        <constructor-arg name="recept" value="water+vegetables"/>
+    </bean>
+
+    <bean id="buter" class="foo.bar.Food">
+        <constructor-arg name="name" value="Buter"/>
+        <constructor-arg name="recept" value="bread+cheese"/>
+    </bean>
+
+    <bean id="porrige" class="foo.bar.Food">
+        <constructor-arg name="name" value="Porrige"/>
+        <constructor-arg name="recept" value="krupa"/>
+    </bean>
+
+    <bean id="person" class="foo.bar.Person">
+        <constructor-arg value="Damir"/>
+    </bean>
+
+    <bean id="proging" class="foo.bar.Subject">
+        <constructor-arg value="Proging"/>
+    </bean>
+
+    <bean id="math" class="foo.bar.Subject">
+        <constructor-arg value="Math"/>
+    </bean>
+
+    <bean id="terver" class="foo.bar.Subject">
+        <constructor-arg value="TerVer"/>
+    </bean>
+
+    <bean id="physics" class="foo.bar.Subject">
+        <constructor-arg value="Physics"/>
+    </bean>
+
+    <bean id="full_person" class="foo.bar.FullPerson">
+        <constructor-arg value="Junir"/>
+        <property name="preferFood">
+            <list>
+                <ref bean="pizza"/>
+                <ref bean="buter"/>
+                <ref bean="porrige"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="student" class="foo.bar.Student">
+        <constructor-arg value="Ilshat"/>
+        <property name="preferSubjects">
+            <list>
+                <ref bean="math"/>
+                <ref bean="physics"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="full_student" class="foo.bar.FullStudent">
+        <constructor-arg value="Dima"/>
+        <property name="preferSubjects">
+            <list>
+                <ref bean="proging"/>
+                <ref bean="terver"/>
+            </list>
+        </property>
+        <property name="preferFood">
+            <list>
+                <ref bean="soup"/>
+                <ref bean="porrige"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="aspirant" class="foo.bar.Aspirant">
+        <constructor-arg value="Ilseyar"/>
+        <property name="work" value="Android developer"/>
+    </bean>
+
+
+
+</beans>
